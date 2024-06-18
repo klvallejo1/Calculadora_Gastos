@@ -1,0 +1,103 @@
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="mb-3">
+                    <label for="nombre" class="form-label">Cedula</label>
+                    <input type="text" class="form-control" placeholder="Ingresa tu cedula">
+                </div>
+
+                <div class="mb-3">
+                    <label for="ingresoAnual" class="form-label">Ingreso Anual</label>
+                    <input type="number" [formControl]="ingresoAnual" class="form-control" id="ingresoAnual" placeholder="Ingresa cuanto ganas al año">
+                    <div *ngIf="ingresoAnual.invalid && (ingresoAnual.dirty || ingresoAnual.touched)" class="alert alert-danger mt-2">
+                        Este campo es requerido
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="alimentacion" class="form-label">Alimentación</label>
+                    <input type="number" [formControl]="alimentacion" class="form-control" id="alimentacion" placeholder="Ingresa el monto para alimentación" max="3809.65">
+                    <div *ngIf="alimentacion.invalid && (alimentacion.dirty || alimentacion.touched)" class="alert alert-danger mt-2">
+                        El monto debe ser numérico y menor o igual a 3809.65
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="vivienda" class="form-label">Vivienda</label>
+                    <input type="number" [formControl]="vivienda" class="form-control" id="vivienda" placeholder="Ingresa el monto para vivienda" max="3809.65">
+                    <div *ngIf="vivienda.invalid && (vivienda.dirty || vivienda.touched)" class="alert alert-danger mt-2">
+                        El monto debe ser numérico y menor o igual a 3809.65
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="educacion" class="form-label">Educación</label>
+                    <input type="number" [formControl]="educacion" class="form-control" id="educacion" placeholder="Ingresa el monto para educación" max="3809.65">
+                    <div *ngIf="educacion.invalid && (educacion.dirty || educacion.touched)" class="alert alert-danger mt-2">
+                        El monto debe ser numérico y menor o igual a 3809.65
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="vestimenta" class="form-label">Vestimenta</label>
+                    <input type="number" [formControl]="vestimenta" class="form-control" id="vestimenta" placeholder="Ingresa el monto para vestimenta" max="3809.65">
+                    <div *ngIf="vestimenta.invalid && (vestimenta.dirty || vestimenta.touched)" class="alert alert-danger mt-2">
+                        El monto debe ser numérico y menor o igual a 3809.65
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="salud" class="form-label">Salud</label>
+                    <input type="number" [formControl]="salud" class="form-control" id="salud" placeholder="Ingresa el monto para salud" max="3809.65">
+                    <div *ngIf="salud.invalid && (salud.dirty || salud.touched)" class="alert alert-danger mt-2">
+                        El monto debe ser numérico y menor o igual a 3809.65
+                    </div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="total" class="form-label">Total Deduccion por gastos personales: <b>{{ totalSum }}$</b></label>
+                </div>
+
+                <button type="submit" class="btn btn-success" [disabled]="formInvalid">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+    <h1 class="mt-4">Resultados</h1>
+    <div class="card">
+        <div class="card-body">
+            <label for="" class="form-label">Tus Ingresos</label>
+            <input type="text" class="form-control" id="baseImponible" [value]="ingresoAnual.value" disabled>
+        </div>
+
+        <div class="card-body">
+            <label for="" class="form-label">Base Imponible</label>
+            <input type="text" class="form-control" id="baseImponible" [value]="baseImponible" disabled>
+        </div>
+
+        <div class="card-body">
+            <label for="" class="form-label">Excedente</label>
+            <input type="text" class="form-control" id="baseImponible" [value]="excedenteFunc" disabled>
+        </div>
+
+        <div class="card-body">
+            <label for="" class="form-label">Valor Excedente</label>
+            <input type="text" class="form-control" id="baseImponible" [value]="porcentajeExcedente" disabled>
+        </div>
+
+        <div class="card-body">
+            <label for="" class="form-label">Impuesto a la Renta</label>
+            <input type="text" class="form-control" id="baseImponible" [value]= "impuestoRenta" disabled>
+        </div>
+
+        <button type="button" (click)="guardarDatos()" class="btn btn-primary mt-2">Guardar Datos</button>
+    </div> 
+
+    <h2 class="mt-2">Datos Recopilados</h2>
+    <div class="card">
+        <div class="card-body">
+            <pre>{{datosRecopilados | json}}</pre>
+        </div>
+    </div>
+</div>
