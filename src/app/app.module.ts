@@ -8,13 +8,15 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { MenuComponent } from './menu/menu.component';
 import { InformacionComponent } from './informacion/informacion.component';
 import { Routes, RouterModule, RouterLinkActive } from '@angular/router';
+import { Formulario2Component } from './formulario2/formulario2.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormularioComponent,
     MenuComponent,
-    InformacionComponent
+    InformacionComponent,
+    Formulario2Component
   ],
   imports: [
     BrowserModule,
