@@ -9,6 +9,10 @@ import { MenuComponent } from './menu/menu.component';
 import { InformacionComponent } from './informacion/informacion.component';
 import { Routes, RouterModule, RouterLinkActive } from '@angular/router';
 import { Formulario2Component } from './formulario2/formulario2.component';
+import { HttpClientModule } from '@angular/common/http';
+import { GastoService } from './gasto.service';
+import { ReporteComponent } from './reporte/reporte.component';
+import { ReporteUsuarioComponent } from './reporte-usuario/reporte-usuario.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,9 @@ import { Formulario2Component } from './formulario2/formulario2.component';
     FormularioComponent,
     MenuComponent,
     InformacionComponent,
-    Formulario2Component
+    Formulario2Component,
+    ReporteComponent,
+    ReporteUsuarioComponent
   ],
   imports: [
     BrowserModule,
@@ -24,9 +30,10 @@ import { Formulario2Component } from './formulario2/formulario2.component';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    RouterLinkActive
+    RouterLinkActive,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [GastoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

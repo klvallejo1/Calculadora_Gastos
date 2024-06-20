@@ -1,0 +1,26 @@
+[{
+    "id":1,
+    "tipo": "vivienda",
+    "ruc": "1765464534",
+    "valor": 345.0
+},
+{
+    "id":2,
+    "tipo": "salud",
+    "ruc": "1765758675",
+    "valor": 600.0
+},
+{
+    "id":3,
+    "tipo": "alimentacion",
+    "ruc": "1789098099",
+    "valor": 404.0
+},
+{
+    "id":4,
+    "tipo": "vivienda",
+    "ruc": "1765647890",
+    "valor": 500.0
+
+}
+]
