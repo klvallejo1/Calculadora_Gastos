@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormularioComponent } from './formulario/formulario.component';
 import { MenuComponent } from './menu/menu.component';
 import { InformacionComponent } from './informacion/informacion.component';
+import { Routes, RouterModule, RouterLinkActive } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { InformacionComponent } from './informacion/informacion.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    RouterModule,
+    RouterLinkActive
   ],
   providers: [],
   bootstrap: [AppComponent]
