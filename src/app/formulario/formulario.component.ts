@@ -1,10 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
+import {
+  FormControl,
+  Validators,
+  ValidatorFn,
+  AbstractControl,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
-  styleUrl: './formulario.component.css',
+  styleUrls: ['./formulario.component.css'],
 })
 export class FormularioComponent {
   alimentacion = new FormControl('', [
@@ -27,14 +32,51 @@ export class FormularioComponent {
     Validators.max(3809.65),
   ]);
 
-  salud = new FormControl('', [
-    Validators.required, 
-    Validators.max(3809.65)
-  ]);
+  salud = new FormControl('', [Validators.required, Validators.max(15238.6)]);
 
   ingresoAnual = new FormControl('');
 
-  datosRecopilados: any[]=[];
+  datosRecopilados: any[] = [];
+
+  fields = [
+    {
+      id: 'alimentacion',
+      label: 'Alimentación',
+      control: this.alimentacion,
+      placeholder: 'Ingresa el monto para alimentación',
+      max: 3809.65,
+    },
+    {
+      id: 'vivienda',
+      label: 'Vivienda',
+      control: this.vivienda,
+      placeholder: 'Ingresa el monto para vivienda',
+      max: 3809.65,
+    },
+    {
+      id: 'educacion',
+      label: 'Educación',
+      control: this.educacion,
+      placeholder: 'Ingresa el monto para educación',
+      max: 3809.65,
+    },
+    {
+      id: 'vestimenta',
+      label: 'Vestimenta',
+      control: this.vestimenta,
+      placeholder: 'Ingresa el monto para vestimenta',
+      max: 3809.65,
+    },
+    {
+      id: 'salud',
+      label: 'Salud',
+      control: this.salud,
+      placeholder: 'Ingresa el monto para salud',
+      max: 15238.60,
+    },
+  ];
+
+  maxTotalSum = 15238.60;
 
   get formInvalid(): boolean {
     return (
@@ -42,29 +84,26 @@ export class FormularioComponent {
       this.vivienda.invalid ||
       this.educacion.invalid ||
       this.vestimenta.invalid ||
-      this.salud.invalid
+      this.salud.invalid ||
+      this.totalSum > this.maxTotalSum
     );
   }
 
   get totalSum(): number {
-    return (
-      parseFloat(this.alimentacion.value || '0') +
-      parseFloat(this.vivienda.value || '0') +
-      parseFloat(this.educacion.value || '0') +
-      parseFloat(this.vestimenta.value || '0') +
-      parseFloat(this.salud.value || '0')
+    return this.fields.reduce(
+      (sum, field) => sum + parseFloat(field.control.value || '0'),
+      0
     );
   }
 
   get baseImponible(): number {
     const ingresos = parseFloat(this.ingresoAnual.value || '0');
     const gastos = this.totalSum;
-
     return ingresos - gastos;
   }
 
   get excedenteFunc(): number {
-    var fraccionBasica = 0;
+    let fraccionBasica = 0;
 
     if (this.baseImponible <= 11722) {
       fraccionBasica = 0;
@@ -92,7 +131,7 @@ export class FormularioComponent {
   }
 
   get porcentajeExcedente(): number {
-    var porcentaje = 0;
+    let porcentaje = 0;
 
     if (this.baseImponible <= 11722) {
       porcentaje = 0;
@@ -120,7 +159,7 @@ export class FormularioComponent {
   }
 
   get impuestoFraccionBasica(): number {
-    var impuesto = 0;
+    let impuesto = 0;
 
     if (this.baseImponible <= 11722) {
       impuesto = 0;
@@ -151,9 +190,7 @@ export class FormularioComponent {
     return this.impuestoFraccionBasica + this.porcentajeExcedente;
   }
 
-  //Guardar datos en un archivo JSON
   guardarDatos(): void {
-
     const registro = {
       ingresoAnual: this.ingresoAnual.value,
       baseImponible: this.baseImponible,

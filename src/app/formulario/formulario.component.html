@@ -50,9 +50,9 @@
 
                 <div class="mb-3">
                     <label for="salud" class="form-label">Salud</label>
-                    <input type="number" [formControl]="salud" class="form-control" id="salud" placeholder="Ingresa el monto para salud" max="3809.65">
+                    <input type="number" [formControl]="salud" class="form-control" id="salud" placeholder="Ingresa el monto para salud" max="15328.60">
                     <div *ngIf="salud.invalid && (salud.dirty || salud.touched)" class="alert alert-danger mt-2">
-                        El monto debe ser numérico y menor o igual a 3809.65
+                        El monto debe ser numérico y menor o igual a 15238.60
                     </div>
                 </div>
 
@@ -60,7 +60,11 @@
                     <label for="total" class="form-label">Total Deduccion por gastos personales: <b>{{ totalSum }}$</b></label>
                 </div>
 
-                <button type="submit" class="btn btn-success" [disabled]="formInvalid">Enviar</button>
+                <div *ngIf="totalSum > maxTotalSum" class="alert alert-danger mt-2">
+                    La suma total de los campos no puede exceder 15238.60
+                </div>
+
+                <button type="submit" class="btn btn-success" [disabled]="formInvalid">Observa tus resultados</button>
             </form>
         </div>
     </div>
