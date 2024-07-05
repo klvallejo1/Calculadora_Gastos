@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { GastoService } from './gasto.service';
 import { ReporteComponent } from './reporte/reporte.component';
 import { ReporteUsuarioComponent } from './reporte-usuario/reporte-usuario.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { ReporteUsuarioComponent } from './reporte-usuario/reporte-usuario.compo
     InformacionComponent,
     Formulario2Component,
     ReporteComponent,
-    ReporteUsuarioComponent
+    ReporteUsuarioComponent,
+    RegisterComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
