@@ -1,0 +1,38 @@
+.container {
+    max-width: 500px;
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #000405;
+    /* Bootstrap info color */
+}
+
+form {
+    background-color: #f8f9fa;
+    /* Bootstrap light color */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.btn-info {
+    background-color: #ca851e;
+    border-color: #f1bd5b;
+    font-weight: bold;
+}
+
+.btn-info:hover {
+    background-color: #f3cc93;
+    border-color: #f1bd5b;
+}

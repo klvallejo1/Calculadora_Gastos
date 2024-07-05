@@ -1,0 +1,36 @@
+.container {
+    max-width: 500px;
+}
+
+h1 {
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    color: #000c0e;
+}
+
+form {
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-control {
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.btn-info {
+    background-color: #31973f;
+    border-color: #b5e7a1;
+    font-weight: bold;
+}
+
+.btn-info:hover {
+    background-color: #70f181;
+    border-color: #b5e7a1;
+}

@@ -1,0 +1,19 @@
+<h1 class="container text-center my-4">REGÍSTRATE!</h1>
+
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="container bg-light p-4 rounded shadow">
+    <div class="mb-3">
+        <label class="form-label">Username</label>
+        <input type="text" class="form-control" formControlName="username" placeholder="Ingresa tu nombre de usuario">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Correo</label>
+        <input type="email" class="form-control" formControlName="email" placeholder="Ingresa tu correo">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Contraseña</label>
+        <input type="password" class="form-control" formControlName="password" placeholder="Ingresa tu contraseña">
+    </div>
+    <div class="text-center">
+        <input type="submit" value="Enviar" class="btn btn-info">
+    </div>
+</form>
