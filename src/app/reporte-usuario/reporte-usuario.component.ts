@@ -19,8 +19,7 @@ export class ReporteUsuarioComponent implements OnInit{
       });
   }
 
-  ngOnInit(): void {
-    
+  ngOnInit(): void { 
   }
 
 }

@@ -2,10 +2,10 @@
     <ul class="mt-2">
         <li *ngFor="let deducible of deducibles" class="mt-2">
             <div class="card" style="width: 80rem;">
-                <img src="../../assets/Dinero.jpg" class="card-img-top" alt="personas">
+                <img [src]="deducible.imagen" class="card-img-top" [alt]="deducible.alt">
                 <div class="card-body">
-                    <h5 class="card-title">{{deducible}}</h5>
-                    <p class="card-text">Descripcion deducible!! <b>{{deducible}}</b></p>
+                    <h5 class="card-title">{{deducible.categoria}}</h5>
+                    <p class="card-text">{{deducible.descripcion}} <b>{{deducible.categoria}}</b></p>
                     <button (click)="informacion(deducible)" class="btn btn-info">Información</button>
                     <button (click)="borrarDeducible(deducible)" class="btn btn-warning">Borrar</button>
                 </div>

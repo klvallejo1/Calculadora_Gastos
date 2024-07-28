@@ -1,0 +1,37 @@
+[
+    {
+        "categoria": "Vivienda",
+        "descripcion": "Toda la información necesaria sobre los beneficios tributarios y obligaciones relacionadas con la compra, venta, construcción o remodelación de una vivienda.",
+        "informacionAdicional": "Información adicional sobre vivienda.",
+        "imagen": "../../assets/Vivienda.jpg",
+        "alt": "vivienda"
+    },
+    {
+        "categoria": "Salud",
+        "descripcion": "Descubre cómo optimizar tus impuestos deduciendo gastos médicos, medicamentos y seguros de salud. Conoce los requisitos para acceder a estos beneficios y cómo realizar tus declaraciones correctamente.",
+        "informacionAdicional": "Información adicional sobre salud.",
+        "imagen": "../../assets/Salud.jpg",
+        "alt": "salud"
+    },
+    {
+        "categoria": "Educacion",
+        "descripcion": "Descubre cómo optimizar tus impuestos deduciendo gastos en colegiaturas, útiles escolares y otros costos educativos. Conoce los requisitos para acceder a estos beneficios y cómo realizar tus declaraciones correctamente.",
+        "informacionAdicional": "Información adicional sobre educación.",
+        "imagen": "../../assets/Educacion.jpg",
+        "alt": "educacion"
+    },
+    {
+        "categoria": "Vestimenta",
+        "descripcion": "Descubre cómo los impuestos afectan tu negocio de moda. Conoce los impuestos que debes pagar al comprar insumos, producir prendas, y al vender tus productos. Aprende sobre los requisitos para emitir facturas y llevar una contabilidad adecuada.",
+        "informacionAdicional": "Información adicional sobre educación.",
+        "imagen": "../../assets/Vestimenta.jpg",
+        "alt": "vestimenta"
+    },
+    {
+        "categoria": "Entretenimiento",
+        "descripcion": "Descubre cómo los impuestos afectan a la industria del entretenimiento. Conoce los impuestos que deben pagar artistas, productores, distribuidores y consumidores de productos como música, cine, teatro, y más. Aprende sobre los requisitos para emitir facturas y llevar una contabilidad adecuada.",
+        "informacionAdicional": "Información adicional sobre educación.",
+        "imagen": "../../assets/Entretenimiento.jpg",
+        "alt": "entretenimiento"
+    }
+]

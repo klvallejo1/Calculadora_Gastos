@@ -1,26 +1,42 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+
+interface Deducible {
+  categoria: string;
+  descripcion: string;
+  informacionAdicional: string;
+  imagen: string;
+  alt: string;
+}
 
 @Component({
   selector: 'app-informacion',
   templateUrl: './informacion.component.html',
-  styleUrl: './informacion.component.css'
+  styleUrl: './informacion.component.css',
 })
 export class InformacionComponent implements OnInit {
-  constructor() {}
+  deducibles: Deducible[] = [];
 
-  ngOnInit(): void {}
+  constructor(private http: HttpClient) {}
 
-  deducibles = ['Vivienda', 'Salud', 'Educacion'];
-
-  informacion(deducible: string) {
-    alert('Esta es información adicional sobre ' + deducible);
+  ngOnInit(): void {
+    this.http
+      .get<Deducible[]>('../../assets/deducibles.json')
+      .subscribe((data) => {
+        this.deducibles = data;
+      });
   }
 
-  borrarDeducible(deducible: string) {
-    for (let i = 0; i < this.deducibles.length; i++) {
-      if (deducible == this.deducibles[i]) {
-        this.deducibles.splice(i, 1);
-      }
-    }
+  informacion(deducible: Deducible) {
+    alert(
+      'Esta es información adicional sobre ' +
+        deducible.categoria +
+        ': ' +
+        deducible.informacionAdicional
+    );
+  }
+
+  borrarDeducible(deducible: Deducible) {
+    this.deducibles = this.deducibles.filter((d) => d !== deducible);
   }
 }
